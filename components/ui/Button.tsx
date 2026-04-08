@@ -9,7 +9,7 @@ type AnchorForMotion = Omit<
   "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart" | "onAnimationEnd"
 >;
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "accent";
 
 const variants: Record<Variant, string> = {
   primary:
@@ -18,6 +18,8 @@ const variants: Record<Variant, string> = {
     "bg-white/90 text-charcoal-800 border border-leaf-200/80 shadow-soft hover:border-leaf-400 hover:bg-white",
   ghost:
     "bg-transparent text-leaf-800 border border-transparent hover:bg-leaf-50 hover:border-leaf-200/60",
+  accent:
+    "bg-charcoal-900 text-cream-50 border-2 border-leaf-600 shadow-[0_8px_28px_-6px_rgba(20,23,20,0.45)] hover:bg-charcoal-900 hover:border-leaf-500 hover:text-white hover:shadow-[0_14px_40px_-8px_rgba(47,79,41,0.42)]",
 };
 
 export function Button({
@@ -35,7 +37,7 @@ export function Button({
   return (
     <motion.a
       href={href}
-      whileHover={{ y: -2 }}
+      whileHover={{ y: variant === "accent" ? -3 : -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={cn(

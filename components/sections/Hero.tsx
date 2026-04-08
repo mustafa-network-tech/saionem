@@ -98,12 +98,12 @@ export function Hero() {
               Tarım, çevre ve yaşam alanlarında biyoteknolojik çözümler — toprağın canlanmasından sürdürülebilir
               üretime, etkin mikroorganizmalarla güvenilir dönüşüm.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="#urunler" variant="primary">
-                Ürünleri İncele
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
+              <Button href="#iletisim" variant="accent" className="min-h-[48px] px-8 py-3.5 text-[0.95rem] sm:min-w-[200px]">
+                Teklif Al
               </Button>
-              <Button href="#iletisim" variant="secondary">
-                İletişime Geç
+              <Button href="#urunler" variant="primary" className="min-h-[48px] px-7 py-3.5">
+                Ürünleri İncele
               </Button>
             </div>
           </Reveal>
@@ -122,9 +122,9 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <div className="order-1 flex justify-center md:order-2 md:justify-end">
+        <div className="order-1 flex justify-center md:order-2 md:justify-end md:pl-4 lg:pl-8">
           <motion.div
-            className="w-full max-w-lg rounded-[2rem] border border-white/60 bg-white/35 p-6 shadow-card backdrop-blur-md sm:p-8 md:rounded-3xl"
+            className="w-full max-w-2xl rounded-[2rem] border border-white/60 bg-white/35 p-5 shadow-card backdrop-blur-md sm:p-7 md:max-w-none md:rounded-3xl lg:p-8"
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}

@@ -3,6 +3,7 @@ import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 const quick = [
+  { href: "/demo-2", label: "Demo 2 (alternatif tasarım)" },
   { href: "#hakkimizda", label: "Hakkımızda" },
   { href: "#urunler", label: "Ürünlerimiz" },
   { href: "#uygulama-alanlari", label: "Uygulama Alanları" },

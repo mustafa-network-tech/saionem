@@ -46,15 +46,18 @@ export function Header() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <Container className="flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.5rem]">
+      <Container className="flex h-[4.25rem] items-center justify-between gap-3 sm:h-[4.5rem] sm:gap-4">
         <a
           href="#hero"
-          className="font-display text-lg font-semibold tracking-tight text-charcoal-900 sm:text-xl"
+          className="min-w-0 shrink-0 font-display text-lg font-semibold tracking-tight text-charcoal-900 sm:text-xl"
         >
           SAION <span className="text-leaf-700">EMTR</span>
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Ana menü">
+        <nav
+          className="hidden min-w-0 flex-1 items-center justify-center gap-4 lg:flex xl:gap-7"
+          aria-label="Ana menü"
+        >
           {links.map((l) => (
             <a
               key={l.href}
@@ -66,10 +69,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-3">
           <Link
             href="/demo-2"
-            className="rounded-full border border-leaf-600/35 bg-leaf-50 px-4 py-2 text-sm font-semibold text-leaf-800 transition-colors hover:border-leaf-600 hover:bg-leaf-100"
+            className="whitespace-nowrap rounded-full border-2 border-leaf-600/50 bg-leaf-50 px-3 py-2 text-sm font-bold text-leaf-900 shadow-sm transition-colors hover:border-leaf-700 hover:bg-leaf-100"
           >
             Demo 2
           </Link>
@@ -80,15 +83,18 @@ export function Header() {
           >
             <Search className="h-[1.05rem] w-[1.05rem]" strokeWidth={1.75} />
           </a>
-          <Button href="#iletisim" variant="primary" className="px-5 py-2.5 text-sm">
+          <Button href="#iletisim" variant="secondary" className="px-5 py-2.5 text-sm font-semibold">
             İletişime Geç
+          </Button>
+          <Button href="#iletisim" variant="accent" className="px-6 py-2.5 text-sm font-bold shadow-lg">
+            Teklif Al
           </Button>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <Link
             href="/demo-2"
-            className="rounded-full border border-leaf-600/40 bg-white px-3 py-1.5 text-xs font-bold tracking-wide text-leaf-800 shadow-sm"
+            className="whitespace-nowrap rounded-full border-2 border-leaf-600/55 bg-white px-2.5 py-1.5 text-[0.7rem] font-extrabold uppercase tracking-wide text-leaf-900 shadow-sm sm:px-3 sm:text-xs"
           >
             Demo 2
           </Link>
@@ -126,13 +132,22 @@ export function Header() {
                   {l.label}
                 </motion.a>
               ))}
-              <div className="mt-3 flex flex-col gap-2 border-t border-leaf-200/60 pt-4">
-                <Button href="#iletisim" variant="primary" className="w-full" onClick={() => setOpen(false)}>
-                  İletişime Geç
-                </Button>
-                <Button href="#urunler" variant="secondary" className="w-full" onClick={() => setOpen(false)}>
+              <div className="mt-3 border-t border-leaf-200/60 pt-4">
+                <Link
+                  href="/demo-2"
+                  onClick={() => setOpen(false)}
+                  className="mb-3 flex w-full items-center justify-center rounded-2xl border-2 border-leaf-600/40 bg-leaf-50 py-3 text-sm font-bold text-leaf-900 transition-colors hover:border-leaf-700 hover:bg-leaf-100"
+                >
+                  Demo 2 — alternatif sayfa
+                </Link>
+                <div className="flex flex-col gap-2">
+                <Button href="#iletisim" variant="accent" className="w-full py-3.5 text-base font-bold" onClick={() => setOpen(false)}>
                   Teklif Al
                 </Button>
+                <Button href="#iletisim" variant="secondary" className="w-full py-3" onClick={() => setOpen(false)}>
+                  İletişime Geç
+                </Button>
+                </div>
               </div>
             </Container>
           </motion.div>
