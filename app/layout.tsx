@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
 import { BodyScrollReset } from "@/components/layout/BodyScrollReset";
+import { DemoCreditSplash } from "@/components/layout/DemoCreditSplash";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="tr" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="font-sans">
         <BodyScrollReset />
+        <DemoCreditSplash />
         {children}
       </body>
     </html>
